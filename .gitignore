@@ -1,0 +1,22 @@
+# Secrets
+.env
+
+# Virtual env
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Working files & model weights (regenerated / re-downloaded)
+work/
+models/
+*.pt
+*.task
+
+# OS
+Thumbs.db
+.DS_Store

@@ -1,0 +1,36 @@
+# Interview Recording Audit System — Python 3.10+
+#
+# Deep-learning runtime (torch/torchaudio) is listed last. By default `pip install
+# torch` gives a CPU build. For an NVIDIA machine, install the CUDA build FIRST:
+#   pip install torch torchaudio --index-url https://download.pytorch.org/whl/cu121
+# then `pip install -r requirements.txt` (it won't downgrade your CUDA torch).
+
+# ---- Core ----
+python-dotenv>=1.0
+gradio>=4.44
+
+# ---- Ingest (Phase 1) ----
+gdown>=5.2
+ffmpeg-python>=0.2          # optional helper; we mostly call ffmpeg via subprocess
+
+# ---- Transcription (Phase 2, local Whisper) ----
+faster-whisper>=1.0
+
+# ---- Diarization (Phase 4) ----
+pyannote.audio>=3.1
+
+# ---- Vision (Phase 3) ----
+ultralytics>=8.3            # YOLO11
+mediapipe>=0.10.14          # Face Landmarker (head pose / gaze)
+opencv-python>=4.9
+numpy>=1.26
+Pillow>=10.0
+
+# ---- Report LLMs (Phase 6) ----
+openai>=1.40                # default report backend
+google-generativeai>=0.7    # optional (Gemini)
+groq>=0.11                  # optional (Llama 3.3 70B)
+
+# ---- Deep-learning runtime ----
+torch>=2.1
+torchaudio>=2.1
